@@ -126,15 +126,31 @@ img {
     display: flex;
     align-items: center;
     flex-direction: row;
+    gap: 120px;
+}
+
+@media only screen and (min-width: 1158px) {
+.header-nav {
     gap: 76px;
+  }
+}
+
+.list {
+    list-style: none;
+    flex-direction: row;
 }
 
 .list-nav {
+    display: flex;
+    flex-wrap: wrap;
     gap: 40px;
 }
 .address-list {
+    display: flex;
+    flex-wrap: wrap;
     gap: 40px;
 }
+
 .address {
     font-family: var(--primary-font);
     font-style: normal;
@@ -149,9 +165,65 @@ img {
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+@media only screen and (min-width: 768px) and (max-width: 1157.98px) {
+    .address-list {
+        flex-direction: column;
+        justify-content: right;
+        gap: 12px;
+    }
+
+.contacts {
+    font-size: 12px;
+    line-height: 1.17;
+}
+}
+
 .contacts:hover,
 .contacts:focus {
     color: var(--secondary-blue-color);
+}
+
+.heading {
+    display: block;
+    font-family: var(--primary-font);
+    color: var(--primary-black-color);
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    font-weight: 500;
+    padding: 24px 0;
+    position: relative;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.heading:hover,
+.heading:focus,
+.heading.current {
+    color: var(--secondary-blue-color);
+
+}
+
+.heading::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    transform: scale(0);
+    transform-origin: right;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--secondary-blue-color);
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+
+.heading:hover:after,
+.heading:focus:after,
+.heading.current:after {
+    transform: scale(1);
+    transform-origin: left;
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
                   main  --  index.html
@@ -257,10 +329,6 @@ img {
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
                 section 1  --  index.html
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-.list {
-    list-style: none;
-    flex-direction: row;
-}
 .list-desc {
     flex-direction: column;
     align-items: flex-start;
@@ -362,9 +430,7 @@ img {
   }
 }
 
- 
-
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
                 section 3  --  index.html
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 .section-our-team {
@@ -684,6 +750,144 @@ img {
     background-color: var(--secondary-blue-color);
     opacity: 0.8;
 }
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                main  --  portfolio.html
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.main-portfolio {
+    font-family: var(--primary-font);
+    color: var(--primary-black-color);
+    background: var(--primary-white-color);
+    letter-spacing: 0.02em;
+}
+.main-portfolio-section {
+    padding-top: 96px;
+    padding-bottom: 120px;
+}
+.filters {
+    color: var(--social-blue-normal);
+}
+
+.button-filters {
+    background: var(--cloud, #F4F4FD);
+    color: var(--social-blue-normal);
+    cursor: pointer;
+    font-family: var(--primary-font);
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    font-weight: 500;
+    padding: 12px 24px;
+    border-radius: 4px;
+    border: 1px solid var(--cornflower, #E7E9FC);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+
+.button-filters:hover,
+.button-filters:focus {
+    background: var(--secondary-blue-color);
+    color: var(--primary-white-color);
+    font-family: var(--primary-font);
+    font-weight: 500;
+    border: 1px solid transparent;
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+
+.h-two-section {
+    color: var(--primary-black-color);
+    font-size: 20px;
+    line-height: 1.2;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+
+.container .button-filters-list {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 72px;
+}
+
+.project-card {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 48px;
+    column-gap: 24px;
+}
+
+.project-card-list {
+    width: calc((100% - 48px) / 3);
+    height: 420px;
+    padding-bottom: 0px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+    flex-shrink: 0;
+    border: 1px solid var(--cornflower, #E7E9FC);
+    border: none;
+}
+
+.overlay {
+    position: relative;
+    overflow: hidden;
+}
+
+.overlay-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-family: sans-serif;
+    line-height: 1.5;
+    padding: 40px 32px;
+    color: var(--social-icon-white);
+    background-color: var(--social-blue-normal);
+    transform: translateY(100%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card-img {
+    display: block;
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card-img:hover .overlay-text,
+.project-card-img:focus .overlay-text {
+    transform: translateY(0);
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card-img:hover,
+.project-card-img:focus {
+    box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
+}
+
+.project-card-list:hover,
+.project-card-list:focus {
+    box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-content {
+    display: flex;
+    padding: 32px 16px;
+    border: 1px solid #e7e9fc;
+    border-top: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+
+
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
             modal window  --  index.html
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
