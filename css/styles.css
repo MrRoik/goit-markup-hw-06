@@ -1137,6 +1137,7 @@ img {
 .menu-container {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     overflow-y: auto;
     position: fixed;
     top: 0;
@@ -1153,18 +1154,20 @@ img {
 .menu-container.is-open {
     transform: translateX(0);
 }
-/*
-.menu-modal {
-    width: 428px;
-    min-height: 796px;
-    padding: 80px 40px 40px 40px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: teal;
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}*/
+
+.menu-toggle {
+    min-height: 22px;
+    min-width: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 24px 0;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
 
 .menu-container .menu-toggle {
     position: absolute;
@@ -1183,19 +1186,6 @@ img {
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.menu-toggle {
-    min-height: 22px;
-    min-width: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-    padding: 24px 0;
-    background-color: transparent;
-    cursor: pointer;
-    border: none;
-    outline: none;
-}
 
 @media (max-width: 767.98px) {
     .list-nav,
@@ -1267,10 +1257,10 @@ img {
     flex-shrink: 0;
 }
 @media only screen and (max-width: 427.98px) {
-    .tel-contacts {
-        font-size: 26px;
-    }
-        .mob-social-links {
-            gap: 24px;
-        }
+.tel-contacts {
+    font-size: 26px;
+}
+.mob-social-links {
+    gap: 24px;
+}
 }
