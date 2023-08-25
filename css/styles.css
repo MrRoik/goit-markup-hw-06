@@ -258,6 +258,13 @@ img {
             background-size: cover;
             background-position: center
 }
+
+/*@media (min-resolution: 192dpi) {
+    .hero_image {
+        background-image: url(../images/hero-bg-mob2x.jpg);
+    }
+}*/
+
 .h-one-section {
     max-width: 320px;
     font-size: 36px;
@@ -1110,3 +1117,80 @@ img {
     align-self: center;
 }
 
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                    mobile-menu   
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.menu-container {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    padding: 32px;
+    background-color: var(--primary-white-color);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform 250ms ease-in-out;
+}
+
+.menu-container .is-open {
+    opacity: 1;
+        visibility: visible;
+        pointer-events: initial;
+}
+
+.menu-modal {
+    width: 428px;
+    min-height: 796px;
+    padding: 80px 40px 40px 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #FCFCFC;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-container .menu-toggle {
+    position: absolute;
+}
+
+.menu-toggle {
+    min-height: 22px;
+    min-width: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0;
+    padding: 24px 0;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+    outline: none;
+}
+
+@media (max-width: 767.98px) {
+    .list-nav,
+    .address {
+        display: none;
+    }
+}
+@media (min-width: 768px) {
+    .menu-toggle {
+        display: none;
+    }
+}
+
+.menu-toggle:hover,
+.menu-toggle:focus {
+    background-color: rgba(0, 0, 0, 0.1);
+}
