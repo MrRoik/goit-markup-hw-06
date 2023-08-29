@@ -99,12 +99,36 @@
             <li class="project-card-list">
               <a href="" class="link project-card-img">
                 <div class="overlay">
-                  <img
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/portfolio/img1@1x.jpg 1x,
+                        ./images/portfolio/img1@2x.jpg 2x
+                      "
+                      media="(max-width: 767.98px)"
+                      width="396"
+                      height="280"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio/img1@1x.jpg 1x,
+                        ./images/portfolio/img1@2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <img
+                      src="./images/portfolio/img1@1x.jpg"
+                      width="360"
+                      height="300"
+                      alt="Bancing App"
+                    />
+                  </picture>
+                  <!--<img
                     src="./images/portfolio/Row1/img-1.jpg"
                     alt="Bancing App"
                     width="360"
                     height="300"
-                  />
+                  />-->
                   <p class="overlay-text">
                     14 Stylish and User-Friendly App Design Concepts · Task
                     Manager App · Calorie Tracker App · Exotic Fruit Ecommerce
@@ -367,7 +391,7 @@
       </div>
     </footer>
     <div class="menu-container js-menu-container" id="mobile-menu">
-      <button class="menu-toggle js-close-menu">
+      <button class="menu-toggle-close js-close-menu">
         <svg class="backdrop-button-icon" width="8" height="8">
           <use href="./images/icons.svg#icon-close-black-18dp-2-1"></use>
         </svg>

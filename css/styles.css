@@ -557,10 +557,17 @@ img {
 }
 
 .customers-link {
-    width: 168px;
+    width: 190px;
     height: 88px;
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
         color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media only screen and (max-width: 427.98px) {
+    .customers-link {
+        width: 100%;
+        flex-basis: calc((100% - 16px) / 2);
+    }
 }
 
 @media only screen and (min-width: 768px) {
@@ -569,6 +576,7 @@ img {
         justify-content: center;
     }
         .customers-link {
+            width: 168px;
         }
 }
 @media only screen and (min-width: 1158px) {
